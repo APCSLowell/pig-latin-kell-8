@@ -43,10 +43,12 @@ public class PigLatin {
     // more code should go here
     if (findFirstVowel(sWord) == -1) {
       return sWord + "ay";
-    }  else if (findFirstVowel(sWord) == 0){
+    } else if (findFirstVowel(sWord) == 0) {
       return sWord + "way";
+    } else if (sWord.substring(0, 2).equals("qu")) {
+      return sWord.substring(2) + sWord.substring(0, 2) + "ay";
     } else {
-      return "ERROR!";
+      return sWord.substring(findFirstVowel(sWord)) + sWord.substring(0,findFirstVowel(sWord)) + "ay";
     }
   }
 }//end PigLatin class
